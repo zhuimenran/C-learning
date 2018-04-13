@@ -1,2 +1,1 @@
-# C-learning
-to study c/c++.
+# C-learning#to study c/c++#to 
