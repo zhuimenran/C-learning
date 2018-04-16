@@ -21,17 +21,54 @@ int main(int argc, char **argv)
 	//int number[MAX_NUMBER_COUNT] = {0};
 	
 	//to count the numbers
-	int i = 0;
 	
-	int number = 0;
+	int temp = 1;
+	int number2 = 0;
+	char number[10];
+	
+	char *s;
+	int i = 0;
 	int num = 0;
 	
-	scanf("%d", &number);
-	while(==1)
+	scanf("%s", s);
+	printf("%d" ,1+2);
+	printf("%s", s);
+	printf("%d", 2+2);
+	
+	while((*++s)!='\0')
 	{
-		if(number>0)
-		num = num + number;
-		i++;
+		i = 0;
+		while((*s++)!='\n')
+		{
+			number[i] = *s;
+			i++;
+			temp = temp * 10;
+		}
+		
+		if(number[0] !='-')
+		{
+			while(i>0)
+			{
+				temp = temp/10;
+				number2 = number2 +(number[i-1]-'0')*temp;
+				i--;
+			}
+			
+			num = num + number2;
+		}
+		else
+		{
+			while(i>1)
+			{
+				temp = temp/100;
+				number2 = number2 +(number[i-2]-'0')*temp;
+				i--;
+			}
+			
+			num = num - number2;	
+		}
+		
+		temp = 1;
 	}
 	
 	printf("%d",num);
