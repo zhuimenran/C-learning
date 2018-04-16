@@ -13,22 +13,22 @@ typedef int SElemType;
 typedef int Status;
 
 /*
- * ´æ´¢½á¹¹
+ * å­˜å‚¨ç»“æ„
  */
 typedef struct
 {
-    SElemType *base;    //Õ»Î²Ö¸Õë
-    SElemType *top;        //Õ»¶¥Ö¸Õë
-    int size;            //Õ»µÄ´óĞ¡
+    SElemType *base;    //æ ˆå°¾æŒ‡é’ˆ
+    SElemType *top;        //æ ˆé¡¶æŒ‡é’ˆ
+    int size;            //æ ˆçš„å¤§å°
 }SqStack;
 
 /*
- * ³õÊ¼»¯Õ»
+ * åˆå§‹åŒ–æ ˆ
  */
 Status InitStack(SqStack *S)
 {
     S->base = (SElemType*) malloc(INIT_SIZE * sizeof(SElemType));
-    if (!S->base)//ÅĞ¶Ï·ÖÅä¿Õ¼äÊÇ·ñ³É¹¦¡£ 
+    if (!S->base)//åˆ¤æ–­åˆ†é…ç©ºé—´æ˜¯å¦æˆåŠŸã€‚ 
     {
         exit(OVERFLOW);
     }
@@ -38,7 +38,7 @@ Status InitStack(SqStack *S)
 }
 
 /*
- * Ïú»ÙÕ»
+ * é”€æ¯æ ˆ
  */
 Status DestroyStack(SqStack *S)
 {
@@ -50,7 +50,7 @@ Status DestroyStack(SqStack *S)
 }
 
 /*
- * Çå¿ÕÕ»
+ * æ¸…ç©ºæ ˆ
  */
 Status ClearStack(SqStack *S)
 {
@@ -59,7 +59,7 @@ Status ClearStack(SqStack *S)
 }
 
 /*
- * ÅĞ¶ÏÕ»ÊÇ·ñÎª¿Õ
+ * åˆ¤æ–­æ ˆæ˜¯å¦ä¸ºç©º
  */
 Status IsEmpty(SqStack S)
 {
@@ -72,7 +72,7 @@ Status IsEmpty(SqStack S)
 }
 
 /*
- * »ñÈ¡Õ»µÄ³¤¶È
+ * è·å–æ ˆçš„é•¿åº¦
  */
 int GetLength(SqStack S)
 {
@@ -81,7 +81,7 @@ int GetLength(SqStack S)
 
 
 /*
- * »ñÈ¡Õ»¶¥ÔªËØ
+ * è·å–æ ˆé¡¶å…ƒç´ 
  */
 Status GetTop(SqStack S, SElemType *e)
 {
@@ -97,7 +97,7 @@ Status GetTop(SqStack S, SElemType *e)
 }
 
 /*
- * Ñ¹Õ»
+ * å‹æ ˆ
  */
 Status Push(SqStack *S, SElemType e)
 {
@@ -117,7 +117,7 @@ Status Push(SqStack *S, SElemType e)
 }
 
 /*
- * ÍËÕ»
+ * é€€æ ˆ
  */
 Status Pop(SqStack *S, SElemType *e)
 {
@@ -131,7 +131,7 @@ Status Pop(SqStack *S, SElemType *e)
 }
 
 /*
- * ·ÃÎÊÔªËØ
+ * è®¿é—®å…ƒç´ 
  */
 void visit(SElemType e)
 {
@@ -139,7 +139,7 @@ void visit(SElemType e)
 }
 
 /*
- * ±éÀúÕ»
+ * éå†æ ˆ
  */
 Status TraverseStack(SqStack S, void (*visit)(SElemType))
 {
